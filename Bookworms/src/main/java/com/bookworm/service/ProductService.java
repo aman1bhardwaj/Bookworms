@@ -25,8 +25,7 @@ public class ProductService {
 	@Autowired
 	ProductDAO prodao;
 	
-	@Autowired
-	CategoryDAO catedao;
+	
 	
 	@Autowired
 	LanguageDAO langdao;
@@ -41,29 +40,27 @@ public class ProductService {
 	PublisherDAO pubdao;
 
 	
-	public Optional<Product> getProductbyID(int prod_id){
+	public Optional<Product> GetProductbyID(int prod_id){
 		return this.prodao.getProductbyID(prod_id);
 	}
 	
-	public Product SaveProduct(Product prod) {
+	public Product saveProduct(Product prod) {
 		return this.prodao.SaveProduct(prod);
 	}
 	
-	public void DeleteProduct(int prod_id) {
+	public void deleteProduct(int prod_id) {
 		this.prodao.DeleteProduct(prod_id);
 	}
 	
-	public  List <Product> GetallProduct(){
+	public  List <Product> getallProduct(){
 		return this.prodao.GetallProduct();
 	}
 	
-	public Product UpdateProduct(Product prod) {
+	public Product updateProduct(Product prod) {
 		return this.prodao.UpdateProduct(prod);
 	}
 	
-	public Optional<Category> getProductbyCategory(int cate_id){
-		return this.catedao.getProductbyCategory(cate_id);
-	}
+	
 	
 	/*public Optional<Language> GetallProductByLanguage(int lang_id){
 		return this.langdao.GetallProductByLanguage(lang_id);

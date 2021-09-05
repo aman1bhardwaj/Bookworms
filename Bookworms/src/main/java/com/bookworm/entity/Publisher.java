@@ -8,16 +8,16 @@ public class Publisher {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int pub_id;
-	String name;
+	String publisher;
 	
 	public Publisher() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Publisher(int pub_id, String name) {
+	public Publisher(int pub_id, String publisher) {
 		this.pub_id = pub_id;
-		this.name = name;
+		this.publisher = publisher;
 	}
 
 	public int getPub_id() {
@@ -28,19 +28,19 @@ public class Publisher {
 		this.pub_id = pub_id;
 	}
 
-	public String getName() {
-		return name;
+	public String getPublisher() {
+		return publisher;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
 
 	@Override
 	public String toString() {
-		return "Publisher [pub_id=" + pub_id + ", name=" + name + "]";
+		return "Publisher [pub_id=" + pub_id + ", publisher=" + publisher + "]";
 	}
-	
+
 	
 	
 }

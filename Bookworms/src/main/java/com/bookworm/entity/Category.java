@@ -7,7 +7,6 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@OneToMany(cascade=CascadeType.ALL)
 	int cate_id;
 	String category;
 	

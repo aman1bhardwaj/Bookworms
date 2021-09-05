@@ -22,25 +22,27 @@ public class ProductController {
 	
 	@PostMapping("/saveProduct")
 	public Product saveProduct( @RequestBody Product prod) {
-		return this.prodserv.SaveProduct(prod);
+		return this.prodserv.saveProduct(prod);
 	}
 	
 	@GetMapping("/getProduct/{id}")
 	public Optional<Product> GetProductbyID(@PathVariable("id") int prod_id){
-		return this.prodserv.getProductbyID(prod_id);
+		return this.prodserv.GetProductbyID(prod_id);
 	}
 	
 	@DeleteMapping("/deleteProducts/{id}")
-	public void deleteProduct(@PathVariable("id") int prod_id) {
-		this.prodserv.DeleteProduct(prod_id);
+	public String deleteProduct(@PathVariable("id") int prod_id) {
+		this.prodserv.deleteProduct(prod_id);
+		return "Deleted";
 	}
 
 	@GetMapping("/getProducts")
 	public  List <Product> getallProduct(){
-		return this.prodserv.GetallProduct();
+		return this.prodserv.getallProduct();
 	}
 	
+	@PostMapping("/updateProduct/{id}")
 	public Product updateProduct(Product prod) {
-		return this.prodserv.UpdateProduct(prod);
+		return this.prodserv.updateProduct(prod);
 	}
 }
