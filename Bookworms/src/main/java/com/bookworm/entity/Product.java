@@ -21,16 +21,16 @@ public class Product {
 	String title;
 	String title_in_english;
 	@ManyToOne(cascade=CascadeType.ALL)
-	Category cate_id;
+	Category category;
 	@ManyToOne(cascade=CascadeType.ALL)
-	Language lang_id;
+	Language language;
 	@ManyToOne(cascade=CascadeType.ALL)
-	Genre gen_id;
+	Genre genre;
 	@OneToMany(cascade=CascadeType.ALL,targetEntity=Author.class)
 	@JoinColumn(name="auth_id")
-	Set<Author> auth_id;
+	Set<Author> author;
 	@ManyToOne(cascade=CascadeType.ALL)
-	Publisher pub_id;
+	Publisher publisher;
 	int base_price;
 	int sale_price;
 	int offer_price;
@@ -47,20 +47,20 @@ public class Product {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Product(int prod_id, int isbn, String title, String title_in_english, Category cate_id, Language lang_id,
-			Genre gen_id, Set<Author> auth_id, Publisher pub_id, int base_price, int sale_price, int offer_price,
+
+	public Product(int prod_id, int isbn, String title, String title_in_english, Category category, Language language,
+			Genre genre, Set<Author> author, Publisher publisher, int base_price, int sale_price, int offer_price,
 			int avl_date, String short_desc, String long_desc, String front_image_link, String product_link,
 			boolean is_rentable, boolean is_library, int length) {
 		this.prod_id = prod_id;
 		this.isbn = isbn;
 		this.title = title;
 		this.title_in_english = title_in_english;
-		this.cate_id = cate_id;
-		this.lang_id = lang_id;
-		this.gen_id = gen_id;
-		this.auth_id = auth_id;
-		this.pub_id = pub_id;
+		this.category = category;
+		this.language = language;
+		this.genre = genre;
+		this.author = author;
+		this.publisher = publisher;
 		this.base_price = base_price;
 		this.sale_price = sale_price;
 		this.offer_price = offer_price;
@@ -73,136 +73,178 @@ public class Product {
 		this.is_library = is_library;
 		this.length = length;
 	}
+
 	public int getProd_id() {
 		return prod_id;
 	}
+
 	public void setProd_id(int prod_id) {
 		this.prod_id = prod_id;
 	}
+
 	public int getIsbn() {
 		return isbn;
 	}
+
 	public void setIsbn(int isbn) {
 		this.isbn = isbn;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getTitle_in_english() {
 		return title_in_english;
 	}
+
 	public void setTitle_in_english(String title_in_english) {
 		this.title_in_english = title_in_english;
 	}
-	public Category getCate_id() {
-		return cate_id;
+
+	public Category getCategory() {
+		return category;
 	}
-	public void setCate_id(Category cate_id) {
-		this.cate_id = cate_id;
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-	public Language getLang_id() {
-		return lang_id;
+
+	public Language getLanguage() {
+		return language;
 	}
-	public void setLang_id(Language lang_id) {
-		this.lang_id = lang_id;
+
+	public void setLanguage(Language language) {
+		this.language = language;
 	}
-	public Genre getGen_id() {
-		return gen_id;
+
+	public Genre getGenre() {
+		return genre;
 	}
-	public void setGen_id(Genre gen_id) {
-		this.gen_id = gen_id;
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
 	}
-	public Set<Author> getAuth_id() {
-		return auth_id;
+
+	public Set<Author> getAuthor() {
+		return author;
 	}
-	public void setAuth_id(Set<Author> auth_id) {
-		this.auth_id = auth_id;
+
+	public void setAuthor(Set<Author> author) {
+		this.author = author;
 	}
-	public Publisher getPub_id() {
-		return pub_id;
+
+	public Publisher getPublisher() {
+		return publisher;
 	}
-	public void setPub_id(Publisher pub_id) {
-		this.pub_id = pub_id;
+
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
 	}
+
 	public int getBase_price() {
 		return base_price;
 	}
+
 	public void setBase_price(int base_price) {
 		this.base_price = base_price;
 	}
+
 	public int getSale_price() {
 		return sale_price;
 	}
+
 	public void setSale_price(int sale_price) {
 		this.sale_price = sale_price;
 	}
+
 	public int getOffer_price() {
 		return offer_price;
 	}
+
 	public void setOffer_price(int offer_price) {
 		this.offer_price = offer_price;
 	}
+
 	public int getAvl_date() {
 		return avl_date;
 	}
+
 	public void setAvl_date(int avl_date) {
 		this.avl_date = avl_date;
 	}
+
 	public String getShort_desc() {
 		return Short_desc;
 	}
+
 	public void setShort_desc(String short_desc) {
 		Short_desc = short_desc;
 	}
+
 	public String getLong_desc() {
 		return long_desc;
 	}
+
 	public void setLong_desc(String long_desc) {
 		this.long_desc = long_desc;
 	}
+
 	public String getFront_image_link() {
 		return front_image_link;
 	}
+
 	public void setFront_image_link(String front_image_link) {
 		this.front_image_link = front_image_link;
 	}
+
 	public String getProduct_link() {
 		return product_link;
 	}
+
 	public void setProduct_link(String product_link) {
 		this.product_link = product_link;
 	}
+
 	public boolean isIs_rentable() {
 		return is_rentable;
 	}
+
 	public void setIs_rentable(boolean is_rentable) {
 		this.is_rentable = is_rentable;
 	}
+
 	public boolean isIs_library() {
 		return is_library;
 	}
+
 	public void setIs_library(boolean is_library) {
 		this.is_library = is_library;
 	}
+
 	public int getLength() {
 		return length;
 	}
+
 	public void setLength(int length) {
 		this.length = length;
 	}
+
 	@Override
 	public String toString() {
 		return "Product [prod_id=" + prod_id + ", isbn=" + isbn + ", title=" + title + ", title_in_english="
-				+ title_in_english + ", cate_id=" + cate_id + ", lang_id=" + lang_id + ", gen_id=" + gen_id
-				+ ", auth_id=" + auth_id + ", pub_id=" + pub_id + ", base_price=" + base_price + ", sale_price="
+				+ title_in_english + ", category=" + category + ", language=" + language + ", genre=" + genre
+				+ ", author=" + author + ", publisher=" + publisher + ", base_price=" + base_price + ", sale_price="
 				+ sale_price + ", offer_price=" + offer_price + ", avl_date=" + avl_date + ", Short_desc=" + Short_desc
 				+ ", long_desc=" + long_desc + ", front_image_link=" + front_image_link + ", product_link="
 				+ product_link + ", is_rentable=" + is_rentable + ", is_library=" + is_library + ", length=" + length
 				+ "]";
 	}
+
 	
 	
 	
