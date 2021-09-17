@@ -8,16 +8,28 @@ public class Publisher {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int pub_id;
-	String publisher;
+	String name;
+	String email;
+	int mobile;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "pub_add_id" ,referencedColumnName = "add_id")
+	Address address;
 	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "pub_bank_acc_id" ,referencedColumnName = "acc_id")
+	BankAccount bankacc;
+
 	public Publisher() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Publisher(int pub_id, String publisher) {
+	public Publisher(int pub_id, String name, String email, int mobile, Address address, BankAccount bankacc) {
 		this.pub_id = pub_id;
-		this.publisher = publisher;
+		this.name = name;
+		this.email = email;
+		this.mobile = mobile;
+		this.address = address;
+		this.bankacc = bankacc;
 	}
 
 	public int getPub_id() {
@@ -28,19 +40,51 @@ public class Publisher {
 		this.pub_id = pub_id;
 	}
 
-	public String getPublisher() {
-		return publisher;
+	public String getName() {
+		return name;
 	}
 
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public int getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(int mobile) {
+		this.mobile = mobile;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public BankAccount getBankacc() {
+		return bankacc;
+	}
+
+	public void setBankacc(BankAccount bankacc) {
+		this.bankacc = bankacc;
 	}
 
 	@Override
 	public String toString() {
-		return "Publisher [pub_id=" + pub_id + ", publisher=" + publisher + "]";
+		return "Publisher [pub_id=" + pub_id + ", name=" + name + ", email=" + email + ", mobile=" + mobile
+				+ ", address=" + address + ", bankacc=" + bankacc + "]";
 	}
 
-	
 	
 }

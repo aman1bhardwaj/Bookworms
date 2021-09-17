@@ -18,8 +18,8 @@ public class Beneficiary {
 	private String email;
 	private Long mobile;
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "ben_add_id",referencedColumnName = "ben_add_id")
-	private Address ben_add_id;
+	@JoinColumn(name = "ben_add_id",referencedColumnName = "add_id")
+	private Address address;
 	
 	@OneToOne
 	@JoinColumn(name = "acc_id",referencedColumnName = "acc_id")

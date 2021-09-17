@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class BankAccount {
@@ -17,6 +18,13 @@ public class BankAccount {
 	int acc_number;
 	String acc_type;
 	String pan_no;
+	
+	@OneToOne(mappedBy="bankacc")
+	private Publisher publisher;
+	
+	@OneToOne(mappedBy="bankacc")
+	private Author author;
+	
 	public BankAccount() {
 		super();
 		// TODO Auto-generated constructor stub
