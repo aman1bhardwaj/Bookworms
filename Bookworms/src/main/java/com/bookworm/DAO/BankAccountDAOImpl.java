@@ -1,6 +1,7 @@
 package com.bookworm.DAO;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,8 +22,8 @@ public class BankAccountDAOImpl implements BankAccountDAO {
 	}
 
 	@Override
-	public BankAccount getBankAccountById(Integer id) {
-		return this.baccountRepo.getById(id);
+	public Optional<BankAccount> getBankAccountById(int acc_id) {
+		return this.baccountRepo.findById(acc_id);
 	}
 
 	@Override

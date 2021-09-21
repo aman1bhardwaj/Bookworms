@@ -1,6 +1,7 @@
 package com.bookworm.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +20,9 @@ public class BankAccountService {
 	}
 
 
-	public BankAccount getBankAccountById(Integer id) {
+	public Optional<BankAccount> getBankAccountById(int acc_id) {
 
-		return this.baccountDao.getBankAccountById(id);
+		return this.baccountDao.getBankAccountById(acc_id);
 	}
 
 

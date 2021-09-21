@@ -43,7 +43,7 @@ public class ProductController {
 	}
 	
 	@PutMapping("/updateProduct/{id}")
-	public Product updateProduct(Product prod) {
+	public Product UpdateProduct( @PathVariable("id") Product prod) {
 		return this.prodserv.updateProduct(prod);
 	}
 }

@@ -42,6 +42,9 @@ public class Product {
 	boolean is_rentable;
 	boolean is_library;
 	int length;
+
+	
+	
 	
 	public Product() {
 		super();

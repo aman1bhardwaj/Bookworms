@@ -1,6 +1,7 @@
 package com.bookworm.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,8 +28,8 @@ public class BankAccountController {
 	}
 	
 	@GetMapping("/baccount/{id}")
-	public BankAccount getBankAccountById(@PathVariable("id") Integer id) {
-		return this.baccountSer.getBankAccountById(id);
+	public Optional<BankAccount> getBankAccountById(@PathVariable("id") int acc_id) {
+		return this.baccountSer.getBankAccountById(acc_id);
 	}
 	
 	
