@@ -2,11 +2,13 @@ package com.bookworm.entity;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -17,15 +19,15 @@ public class Myshelf {
 	private int shelf_id	;
 	@OneToOne(targetEntity=UserTable.class)
 	@JoinColumn(name = "user_id",referencedColumnName = "u_id")
-	private UserTable user	;
-	@OneToMany(targetEntity=Product.class)
-	@JoinColumn(name = "prod_id",referencedColumnName = "p_id")
-	private Product	product	;
+	private UserTable user;
+	@ManyToOne(targetEntity=Product.class)
+	@JoinColumn(name = "prod_id",referencedColumnName = "prod_id")
+	private Product	prod;
 	private String tr_type	;
-	private Date prod_expiry	;
+	private Date prod_expiry;
+	
 	public Myshelf() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Myshelf(int shelf_id, String tr_type, Date prod_expiry) {
 		this.shelf_id = shelf_id;
@@ -52,8 +54,8 @@ public class Myshelf {
 	}
 	@Override
 	public String toString() {
-		return "Myshelf [shelf_id=" + shelf_id + ", user=" + user + ", product=" + product + ", tr_type=" + tr_type
-				+ ", prod_expiry=" + prod_expiry + "]";
+		return "Myshelf [shelf_id=" + shelf_id + ", tr_type=" + tr_type + ", prod_expiry=" + prod_expiry + "]";
 	}
+	
 	
 }

@@ -24,7 +24,6 @@ public class Author {
 
 	public Author() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Author(int auth_id, String author_name, String email, int mobile, Address address, boolean has_beneficiary,

@@ -6,14 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bookworm.DAO.AuthorDAO;
-import com.bookworm.DAO.CategoryDAO;
-import com.bookworm.DAO.GenreDAO;
-import com.bookworm.DAO.LanguageDAO;
 import com.bookworm.DAO.ProductDAO;
-import com.bookworm.DAO.PublisherDAO;
 import com.bookworm.entity.Author;
-import com.bookworm.entity.Category;
 import com.bookworm.entity.Genre;
 import com.bookworm.entity.Language;
 import com.bookworm.entity.Product;
@@ -24,21 +18,6 @@ public class ProductService {
 	
 	@Autowired
 	ProductDAO prodao;
-	
-	
-	
-	@Autowired
-	LanguageDAO langdao;
-	
-	@Autowired
-	GenreDAO gendao;
-	
-	@Autowired
-	AuthorDAO authdao;
-	
-	@Autowired
-	PublisherDAO pubdao;
-
 	
 	public Optional<Product> GetProductbyID(int prod_id){
 		return this.prodao.getProductbyID(prod_id);
@@ -56,26 +35,29 @@ public class ProductService {
 		return this.prodao.GetallProduct();
 	}
 	
-	public Product updateProduct(Product prod) {
-		return this.prodao.UpdateProduct(prod);
+	public Product updateProduct(Product prod,int prod_id) {
+		return this.prodao.UpdateProduct(prod,prod_id);
+		
 	}
 	
-	
-	
-	/*public Optional<Language> GetallProductByLanguage(int lang_id){
-		return this.langdao.GetallProductByLanguage(lang_id);
+	public List<Product> GetallProductByCategory(int cate_id){
+		return this.prodao.GetallProductByCategory(cate_id);
 	}
 	
 	public Optional<Genre> getProductByGenre(int gen_id){
-		return this.gendao.getProductByGenre(gen_id);
+		return this.prodao.getProductByGenre(gen_id);
 	}
 	
-	public Optional<Author> getProductByAuthor(int auth_id){
-		return this.authdao.getProductByAuthor(auth_id);
+	public List<Language> GetallProductByLanguage(int lang_id){
+		return this.prodao.GetallProductByLanguage(lang_id);
+	}
+	
+	public List<Author> getProductByAuthor(int auth_id){
+		return this.prodao.getProductByAuthor(auth_id);
 	}
 	
 	public Optional<Publisher> getProductByPublisher(int pub_id){
-		return this.pubdao.getProductByPublisher(pub_id);
-	}*/
+		return this.prodao.getProductByPublisher(pub_id);
+	}
 		
 }
