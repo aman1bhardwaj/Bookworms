@@ -68,12 +68,12 @@ public class ProductDAOImpl implements ProductDAO{
 		return this.prorepo.GetallProductByLanguage(lang_id);
 	}
 
-	@Override
+	/*@Override
 	public List<Author> getProductByAuthor(int auth_id) {
 		// TODO Auto-generated method stub
 		return this.prorepo.getProductByAuthor(auth_id);
 	}
-
+*/
 	@Override
 	public Optional<Publisher> getProductByPublisher(int pub_id) {
 		// TODO Auto-generated method stub

@@ -53,7 +53,7 @@ public class ProductController {
 	
 	@GetMapping("/productbycategory/{id}")
 	public List<Product> GetallProductByCategory(@PathVariable("id") int cate_id){
-		return this.prodserv.GetallProductByCategory(cate_id);
+		return this.prodserv.GetallProductByCategory(cate_id);  
 	}
 	
 	@GetMapping("/productbygenre/{id}")
@@ -67,11 +67,11 @@ public class ProductController {
 		return this.prodserv.GetallProductByLanguage(lang_id);
 	}
 	
-	@GetMapping("/productbyauthor/{id}")
+	/*@GetMapping("/productbyauthor/{id}")
 	public List<Author> getProductByAuthor(@PathVariable("id") int auth_id) {
 		// TODO Auto-generated method stub
 		return this.prodserv.getProductByAuthor(auth_id);
-	}
+	}*/
 	@GetMapping("/productbypublisher/{id}")
 	public Optional<Publisher> getProductByPublisher(@PathVariable("id") int pub_id){
 		return this.prodserv.getProductByPublisher(pub_id);

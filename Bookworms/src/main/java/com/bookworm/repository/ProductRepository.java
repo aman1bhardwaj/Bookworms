@@ -25,8 +25,8 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 	@Query("select p from Product p where p.language.lang_id=?1")
 	public List<Language> GetallProductByLanguage(int lang_id);
 	
-	@Query("select p from Product p where p.author.auth_id=?1")
-	public List<Author> getProductByAuthor(int auth_id);
+/*	@Query("select p from Product p where p.author.auth_id=?1")
+	public List<Author> getProductByAuthor(int auth_id);*/
 	
 	@Query("select p from Product p where p.publisher.pub_id=?1")
 	public Optional<Publisher> getProductByPublisher(int pub_id);

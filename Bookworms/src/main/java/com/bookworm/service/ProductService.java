@@ -52,9 +52,9 @@ public class ProductService {
 		return this.prodao.GetallProductByLanguage(lang_id);
 	}
 	
-	public List<Author> getProductByAuthor(int auth_id){
+	/*public List<Author> getProductByAuthor(int auth_id){
 		return this.prodao.getProductByAuthor(auth_id);
-	}
+	}*/
 	
 	public Optional<Publisher> getProductByPublisher(int pub_id){
 		return this.prodao.getProductByPublisher(pub_id);

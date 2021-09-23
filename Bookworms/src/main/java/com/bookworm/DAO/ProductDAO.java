@@ -20,7 +20,7 @@ public interface ProductDAO {
 	public List<Product> GetallProductByCategory(int cate_id);
 	public Optional<Genre> getProductByGenre(int gen_id);
 	public List<Language> GetallProductByLanguage(int lang_id);
-	public List<Author> getProductByAuthor(int auth_id);
+	//public List<Author> getProductByAuthor(int auth_id);
 	public Optional<Publisher> getProductByPublisher(int pub_id);
 	
 }
