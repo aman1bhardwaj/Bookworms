@@ -1,6 +1,7 @@
 package com.bookworm.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,7 +27,7 @@ public class AddressController {
 	}
 	
 	@GetMapping("/address/{id}")
-	public Address getAddressById(@PathVariable("id") Integer id) {
+	public Optional<Address> getAddressById(@PathVariable("id") int id) {
 		return this.addressSer.getAddressById(id);
 	}
 	
@@ -44,7 +45,7 @@ public class AddressController {
 	
 	
 	@DeleteMapping("/address/{id}")
-	public String deleteAddress(@PathVariable("id") Integer id) {
+	public String deleteAddress(@PathVariable("id") int id) {
 		return this.addressSer.deleteAddressById(id);
 	}
 }

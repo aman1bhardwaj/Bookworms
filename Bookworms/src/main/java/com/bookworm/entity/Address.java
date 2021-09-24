@@ -34,12 +34,17 @@ public class Address {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(int add_id, String address, String city, String district, int pin_code) {
+	public Address(int add_id, String address, String city, String district, int pin_code, UserTable user,
+			Beneficiary benif, Publisher publish, Author author) {
 		this.add_id = add_id;
 		this.address = address;
 		this.city = city;
 		District = district;
 		this.pin_code = pin_code;
+		this.user = user;
+		this.benif = benif;
+		this.publish = publish;
+		this.author = author;
 	}
 
 	public int getAdd_id() {
@@ -82,10 +87,43 @@ public class Address {
 		this.pin_code = pin_code;
 	}
 
+	public UserTable getUser() {
+		return user;
+	}
+
+	public void setUser(UserTable user) {
+		this.user = user;
+	}
+
+	public Beneficiary getBenif() {
+		return benif;
+	}
+
+	public void setBenif(Beneficiary benif) {
+		this.benif = benif;
+	}
+
+	public Publisher getPublish() {
+		return publish;
+	}
+
+	public void setPublish(Publisher publish) {
+		this.publish = publish;
+	}
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
 	@Override
 	public String toString() {
 		return "Address [add_id=" + add_id + ", address=" + address + ", city=" + city + ", District=" + District
-				+ ", pin_code=" + pin_code + "]";
+				+ ", pin_code=" + pin_code + ", user=" + user + ", benif=" + benif + ", publish=" + publish
+				+ ", author=" + author + "]";
 	}
 
 	

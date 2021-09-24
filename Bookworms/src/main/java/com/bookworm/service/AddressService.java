@@ -1,6 +1,7 @@
 package com.bookworm.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class AddressService {
 	}
 
 
-	public Address getAddressById(Integer id) {
+	public Optional<Address> getAddressById(int id) {
 
 		return this.addressDao.getAddressById(id);
 	}
@@ -36,7 +37,7 @@ public class AddressService {
 	}
 
 
-	public String deleteAddressById(Integer id) {
+	public String deleteAddressById(int id) {
 	
 		return this.addressDao.deleteAddressById(id);
 	}

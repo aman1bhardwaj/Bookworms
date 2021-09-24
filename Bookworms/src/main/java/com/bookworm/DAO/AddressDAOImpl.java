@@ -1,6 +1,7 @@
 package com.bookworm.DAO;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,8 +22,8 @@ public class AddressDAOImpl  implements AddressDAO {
 	}
 
 	@Override
-	public Address getAddressById(Integer id) {
-		return this.addressRepo.getById(id);
+	public Optional<Address> getAddressById(int id) {
+		return this.addressRepo.findById(id);
 	}
 
 	@Override
@@ -36,7 +37,7 @@ public class AddressDAOImpl  implements AddressDAO {
 	}
 
 	@Override
-	public String deleteAddressById(Integer id) {
+	public String deleteAddressById(int id) {
 		if(this.addressRepo.existsById(id)){
 			this.addressRepo.deleteById(id);
 			return "Address DELTED";
